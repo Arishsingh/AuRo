@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
         flexDirection: "column",
         alignItems: "center",
         position: "relative",
-        fontFamily: "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        fontFamily:
+          "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
       }}
     >
       <div
@@ -50,50 +52,46 @@ export default function Home() {
           minHeight: "100vh",
         }}
       >
-        <div
+        <nav
           style={{
             display: "flex",
-            justifyContent: "center",
-            marginBottom: "40px",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "14px 20px",
+            marginTop: "20px",
+            marginBottom: "32px",
           }}
         >
-          <nav
-            style={{
-              display: "flex",
-              alignItems: "center",
-              backgroundColor: "#1a1a1a",
-              borderRadius: "999px",
-              padding: "5px 6px",
-              gap: "2px",
-            }}
-          >
-            <div
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="8" fill="#111" />
+              <path
+                d="M8 20L14 8L20 20M10.5 15.5H17.5"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+            <span
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                padding: "4px 16px 4px 8px",
+                fontWeight: 700,
+                fontSize: "15px",
+                color: "#111",
+                letterSpacing: "-0.01em",
               }}
             >
-              <span
-                style={{
-                  color: "white",
-                  fontWeight: 600,
-                  fontSize: "14px",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                AuRo
-              </span>
-            </div>
+              Aria
+            </span>
+          </div>
 
-            {["Customers", "Use Cases", "Pricing", "Log in"].map((item) => (
+          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+            {["Home", "Customers", "Use Cases", "Pricing"].map((item) => (
               <a
                 key={item}
                 href="#"
                 style={{
-                  color: "#9ca3af",
-                  fontSize: "13.5px",
+                  color: "#555",
+                  fontSize: "14px",
                   padding: "6px 14px",
                   borderRadius: "999px",
                   textDecoration: "none",
@@ -107,369 +105,294 @@ export default function Home() {
                 {item === "Use Cases" && <ChevronDown size={13} />}
               </a>
             ))}
+          </div>
 
-            <button
-              style={{
-                marginLeft: "2px",
-                backgroundColor: "white",
-                color: "#111",
-                fontSize: "13.5px",
-                fontWeight: 500,
-                padding: "7px 18px",
-                borderRadius: "999px",
-                border: "1.5px solid #e5e7eb",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Try for free
-            </button>
-          </nav>
+          <button
+            style={{
+              backgroundColor: "#111",
+              color: "white",
+              fontSize: "14px",
+              fontWeight: 600,
+              padding: "9px 22px",
+              borderRadius: "12px",
+              border: "none",
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Try for free
+          </button>
+        </nav>
+
+        <div style={{ textAlign: "center", padding: "20px 20px 36px" }}>
+          <h1
+            style={{
+              fontSize: "clamp(1.2rem, 2.4vw, 2.2rem)",
+              fontWeight: 400,
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+              color: "#0d0d0d",
+              margin: "0 auto",
+              whiteSpace: "nowrap",
+              fontFamily:
+                "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif",
+            }}
+          >
+            Your diagnosis, explained so you leave with clarity
+          </h1>
+
+          <p
+            style={{
+              fontSize: "14px",
+              fontWeight: 400,
+              color: "#9ca3af",
+              lineHeight: 1.7,
+              maxWidth: "480px",
+              margin: "16px auto 0",
+              textAlign: "center",
+              fontFamily:
+                "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            }}
+          >
+            Aria turns complex medical language into clear, personalized
+            explanations helping you understand your condition and next steps
+            with confidence.
+          </p>
         </div>
 
         <div
           style={{
-            borderRadius: "14px",
+            borderRadius: "20px",
             overflow: "hidden",
             border: "1px solid rgba(0,0,0,0.1)",
             marginLeft: "20px",
             marginRight: "20px",
-            boxShadow: "0 40px 80px -10px rgba(255,255,255,0.8)",
+            backgroundColor: "#d9d9d9",
+            minHeight: "40px",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
           }}
         >
           <div
             style={{
               position: "relative",
               width: "100%",
-              aspectRatio: "16 / 6.2",
+              aspectRatio: "14   / 6",
             }}
           >
             <Image
               src="/hero.png"
               alt="AuRo hero"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: "center top" }}
               priority
             />
           </div>
         </div>
-
-        <div
-          style={{
-            marginTop: "44px",
-            marginLeft: "20px",
-            marginRight: "20px",
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-            gap: "48px",
-          }}
-        >
-          <div style={{ flex: 1, maxWidth: "540px" }}>
-            <h1
-              style={{
-                fontSize: "2.5rem",
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: "-0.03em",
-                color: "#0d0d0d",
-                margin: 0,
-              }}
-            >
-              Your diagnosis, explained
-              <br />
-              so you leave with{" "}
-              <em
-                style={{
-                  fontStyle: "italic",
-                  fontFamily: "Georgia, 'Times New Roman', serif",
-                  fontWeight: 400,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                clarity
-              </em>
-            </h1>
-
-            <p
-              style={{
-                marginTop: "28px",
-                fontSize: "13px",
-                color: "#6b7280",
-                letterSpacing: "0.01em",
-              }}
-            >
-              Trusted by patients at leading hospitals such as
-            </p>
-
-            <div
-              style={{
-                marginTop: "14px",
-                display: "flex",
-                alignItems: "center",
-                gap: "32px",
-                flexWrap: "wrap",
-              }}
-            >
-              <LogoMonzo />
-              <LogoGuild />
-              <LogoCleo />
-              <LogoTrademe />
-              <LogoParadigm />
-            </div>
-          </div>
-
-          <div style={{ flexShrink: 0, width: "380px", paddingTop: "4px" }}>
-            <p
-              style={{
-                fontSize: "13.5px",
-                color: "#4b5563",
-                lineHeight: 1.65,
-                margin: 0,
-              }}
-            >
-              Upload your prescription, lab report, or discharge
-              <br />
-              summary — AuRo turns medical jargon into clarity.
-            </p>
-
-            <div style={{ marginTop: "14px", display: "flex", gap: "8px" }}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                style={{
-                  flex: 1,
-                  minWidth: 0,
-                  backgroundColor: "#f3f4f6",
-                  border: "1px solid #e5e7eb",
-                  fontSize: "13px",
-                  padding: "10px 14px",
-                  borderRadius: "10px",
-                  outline: "none",
-                  color: "#111",
-                }}
-              />
-              <button
-                style={{
-                  backgroundColor: "#111",
-                  color: "white",
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  padding: "10px 18px",
-                  borderRadius: "10px",
-                  border: "none",
-                  cursor: "pointer",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Try for free
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
 
+      {/* Article section */}
       <div
         style={{
           width: "100%",
           maxWidth: "1600px",
-          padding: "80px 44px 80px",
-          position: "relative",
+          padding: "22px 44px 80px",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
         }}
       >
+        <div style={{ maxWidth: "780px", paddingLeft: "100px" }}>
+          <p
+            style={{
+              fontSize: "13.5px",
+              color: "#4b5563",
+              lineHeight: 1.85,
+              margin: "0 0 24px",
+            }}
+          >
+            In today's complex healthcare landscape, understanding your own
+            medical records has never been more important — or more difficult.
+            Doctors use dense terminology, lab reports are filled with
+            abbreviations, and discharge summaries can feel like a foreign
+            language. But the true value of Aria lies in its ability to bridge
+            this gap, giving patients insights that drive smarter health
+            decisions and a deeper understanding of their care.
+          </p>
+          <p
+            style={{
+              fontSize: "13.5px",
+              color: "#4b5563",
+              lineHeight: 1.85,
+              margin: "0 0 40px",
+            }}
+          >
+            Here's how Aria unlocks new possibilities for your health journey:
+          </p>
+
+          {[
+            {
+              num: "1.",
+              title: "Real-Time Understanding",
+              body: [
+                "One of the most significant advantages of Aria is instant access to plain-language explanations. Instead of waiting for a follow-up appointment or searching unreliable sources online, you get up-to-the-minute clarity on your diagnosis, medications, and next steps. Real-time understanding helps you make confident decisions, ask better questions, and take an active role in your care.",
+                "For example, patients leaving a cardiology consultation use Aria to understand what terms like 'ejection fraction' or 'atrial fibrillation' actually mean for their daily life — allowing for immediate, informed action.",
+              ],
+            },
+            {
+              num: "2.",
+              title: "Personalized Explanations",
+              body: [
+                "Aria is designed to adapt to your situation. This means that as your documents change — new prescriptions, updated lab values, revised diagnoses — Aria's explanations evolve with you. Whether you're managing a chronic condition or navigating a one-time procedure, Aria tailors its output to your specific context.",
+                "The personalization also extends to how information is delivered. You can combine insights from multiple documents — prescriptions, reports, and summaries — giving you a 360-degree view of your health.",
+              ],
+            },
+            {
+              num: "3.",
+              title: "Confidence in Every Consultation",
+              body: [
+                "Unlike generic medical search engines that surface overwhelming or irrelevant results, Aria is grounded in your actual documents and operates with your wellbeing in mind. This significantly lowers anxiety, as you only receive explanations relevant to your specific situation. The clarity gained can then be reinvested into better conversations with your care team.",
+                "Additionally, because Aria handles the interpretation layer, there's no need to rely on memory or hurried notes — you leave every appointment with complete understanding and calm.",
+              ],
+            },
+          ].map(({ num, title, body }) => (
+            <div key={num} style={{ marginBottom: "40px" }}>
+              <h2
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  color: "#111",
+                  margin: "0 0 12px",
+                  display: "flex",
+                  gap: "10px",
+                }}
+              >
+                <span style={{ color: "#6b7280" }}>{num}</span> {title}
+              </h2>
+              {body.map((para, i) => (
+                <p
+                  key={i}
+                  style={{
+                    fontSize: "13.5px",
+                    color: "#4b5563",
+                    lineHeight: 1.85,
+                    margin: "0 0 14px",
+                  }}
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Sidebar */}
         <div
           style={{
-            display: "flex",
-            gap: "80px",
-            alignItems: "flex-start",
-            marginBottom: "56px",
+            flexShrink: 0,
+            width: "220px",
+            position: "sticky",
+            top: "40px",
+            alignSelf: "flex-start",
+            marginRight: "120px",
           }}
         >
-          <div style={{ flexShrink: 0, width: "160px", paddingTop: "6px" }}>
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#6b7280",
-                lineHeight: 1.5,
-                margin: 0,
-              }}
-            >
-              AI Medical Companion
-              <br />
-              built for patients
-            </p>
-          </div>
-          <div style={{ flex: 1, maxWidth: "680px" }}>
-            <p
-              style={{
-                fontSize: "1.75rem",
-                fontWeight: 500,
-                lineHeight: 1.35,
-                color: "#111",
-                margin: 0,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              AuRo bridges the gap between doctors and patients. Upload your
-              prescription, lab report, or discharge summary — and leave every
-              consultation with complete clarity, confidence, and calm.
-            </p>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", gap: "12px", alignItems: "flex-end" }}>
-          <div
+          <p
             style={{
-              flex: 1,
-              backgroundColor: "#1a1a1a",
-              borderRadius: "32px 32px 32px 8px",
-              padding: "32px",
-              height: "200px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              backgroundImage:
-                "repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "3.5rem",
-                fontWeight: 700,
-                color: "white",
-                letterSpacing: "-0.04em",
-                lineHeight: 1,
-              }}
-            >
-              87%
-            </div>
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#9ca3af",
-                lineHeight: 1.6,
-                margin: 0,
-              }}
-            >
-              of patients felt significantly less anxious about their diagnosis
-              after using AuRo
-            </p>
-          </div>
-
-          <div
-            style={{
-              flex: 1,
-              backgroundColor: "#1a1a1a",
-              borderRadius: "8px 32px 32px 32px",
-              padding: "32px",
-              height: "260px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              backgroundImage:
-                "repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "3.5rem",
-                fontWeight: 700,
-                color: "white",
-                letterSpacing: "-0.04em",
-                lineHeight: 1,
-              }}
-            >
-              3×
-            </div>
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#9ca3af",
-                lineHeight: 1.6,
-                margin: 0,
-              }}
-            >
-              faster treatment adherence when patients truly understand their
-              health journey
-            </p>
-          </div>
-
-          <div
-            style={{
-              flex: 1,
-              backgroundColor: "#1a1a1a",
-              borderRadius: "32px 8px 32px 32px",
-              padding: "32px",
-              height: "320px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              backgroundImage:
-                "repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px)",
-              position: "relative",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "3.5rem",
-                fontWeight: 700,
-                color: "white",
-                letterSpacing: "-0.04em",
-                lineHeight: 1,
-              }}
-            >
-              0
-            </div>
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#9ca3af",
-                lineHeight: 1.6,
-                margin: 0,
-              }}
-            >
-              medical misunderstandings when AuRo translates your doctor's notes
-              into plain language
-            </p>
-            <div
-              style={{
-                position: "absolute",
-                bottom: "28px",
-                right: "28px",
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                backgroundColor: "rgba(255,255,255,0.1)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span style={{ color: "white", fontSize: "16px" }}>↗</span>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ marginTop: "40px" }}>
-          <a
-            href="#"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              fontSize: "13.5px",
+              fontSize: "11.5px",
+              fontWeight: 700,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
               color: "#111",
-              textDecoration: "none",
-              border: "1px solid rgba(0,0,0,0.2)",
-              borderRadius: "999px",
-              padding: "8px 18px",
-              fontWeight: 500,
+              margin: "0 0 24px",
             }}
           >
-            Learn more about AuRo →
-          </a>
+            In this article
+          </p>
+          {[
+            "Real-Time Understanding",
+            "Personalized Explanations",
+            "Confidence in Every Consultation",
+          ].map((title, i) => (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                gap: "14px",
+                alignItems: "flex-start",
+                marginBottom: "22px",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "13px",
+                  color: "#111",
+                  paddingTop: "1px",
+                  flexShrink: 0,
+                }}
+              >
+                {i + 1}.
+              </span>
+              <p
+                style={{
+                  fontSize: "13.5px",
+                  color: "#111",
+                  lineHeight: 1.55,
+                  margin: 0,
+                }}
+              >
+                {title}
+              </p>
+            </div>
+          ))}
+
+
+          <div
+            style={{
+              borderTop: "1px solid rgba(0,0,0,0.1)",
+              marginTop: "8px",
+              paddingTop: "24px",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "11.5px",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#111",
+                margin: "0 0 12px",
+              }}
+            >
+              Topics
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+              {[
+                "Medical AI",
+                "Patient Care",
+                "Lab Reports",
+                "Prescriptions",
+                "Health Clarity",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    fontSize: "11.5px",
+                    color: "#4b5563",
+                    backgroundColor: "rgba(0,0,0,0.06)",
+                    borderRadius: "999px",
+                    padding: "4px 10px",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+
 
       <div
         style={{
@@ -592,10 +515,10 @@ export default function Home() {
             <div style={{ fontSize: "13px", fontWeight: 600, color: "#111" }}>
               Features
             </div>
-            <div style={{ fontSize: "13px", color: "#6b7280" }}>Starter</div>
-            <div style={{ fontSize: "13px", color: "#6b7280" }}>Basic</div>
-            <div style={{ fontSize: "13px", color: "#6b7280" }}>Pro</div>
-            <div style={{ fontSize: "13px", color: "#6b7280" }}>Enterprise</div>
+            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Starter</div>
+            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Basic</div>
+            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Pro</div>
+            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Enterprise</div>
           </div>
 
           {[
@@ -696,6 +619,7 @@ export default function Home() {
                   style={{
                     fontSize: "16px",
                     color: active ? "#111" : "#d1d5db",
+                    textAlign: "center",
                   }}
                 >
                   {active ? "●" : "○"}
@@ -1009,12 +933,39 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ width: "100%", maxWidth: "1600px", padding: "40px 120px 80px" }}>
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1600px",
+          padding: "40px 120px 80px",
+        }}
+      >
         <div style={{ display: "flex", gap: "80px", alignItems: "flex-start" }}>
-
           <div style={{ flexShrink: 0, width: "200px", paddingTop: "4px" }}>
-            <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#111", margin: "0 0 8px" }}>FAQ</p>
-            <h2 style={{ fontSize: "1.6rem", fontWeight: 500, color: "#111", margin: 0, letterSpacing: "-0.02em", lineHeight: 1.2 }}>Frequently asked</h2>
+            <p
+              style={{
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#111",
+                margin: "0 0 8px",
+              }}
+            >
+              FAQ
+            </p>
+            <h2
+              style={{
+                fontSize: "1.6rem",
+                fontWeight: 500,
+                color: "#111",
+                margin: 0,
+                letterSpacing: "-0.02em",
+                lineHeight: 1.2,
+              }}
+            >
+              Frequently asked
+            </h2>
           </div>
 
           <FAQAccordion />
@@ -1022,27 +973,127 @@ export default function Home() {
       </div>
 
       <div style={{ width: "100%", borderTop: "1px solid rgba(0,0,0,0.08)" }}>
-        <div style={{ maxWidth: "1600px", margin: "0 auto", padding: "0 44px" }}>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", padding: "56px 0" }}>
+        <div
+          style={{ maxWidth: "1600px", margin: "0 auto", padding: "0 44px" }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              padding: "56px 0",
+            }}
+          >
             {[
-              { icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>), title: "Instant Analysis", desc: "Upload any medical document and receive a clear explanation in under 3 minutes." },
-              { icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>), title: "100% Private", desc: "Your health data is never stored or shared. AuRo processes and forgets." },
-              { icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>), title: "Doctor-Aligned", desc: "AuRo explains — never diagnoses. Always aligned with your doctor's guidance." },
+              {
+                icon: (
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                ),
+                title: "Instant Analysis",
+                desc: "Upload any medical document and receive a clear explanation in under 3 minutes.",
+              },
+              {
+                icon: (
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                ),
+                title: "100% Private",
+                desc: "Your health data is never stored or shared. AuRo processes and forgets.",
+              },
+              {
+                icon: (
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                ),
+                title: "Doctor-Aligned",
+                desc: "AuRo explains — never diagnoses. Always aligned with your doctor's guidance.",
+              },
             ].map(({ icon, title, desc }, i) => (
-              <div key={title} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "0 48px", borderRight: i < 2 ? "1px solid rgba(0,0,0,0.08)" : "none", color: "#111" }}>
+              <div
+                key={title}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  padding: "0 48px",
+                  borderRight: i < 2 ? "1px solid rgba(0,0,0,0.08)" : "none",
+                  color: "#111",
+                }}
+              >
                 <div style={{ marginBottom: "16px", opacity: 0.7 }}>{icon}</div>
-                <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#111", margin: "0 0 8px" }}>{title}</p>
-                <p style={{ fontSize: "12.5px", color: "#6b7280", lineHeight: 1.7, margin: 0 }}>{desc}</p>
+                <p
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: 700,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "#111",
+                    margin: "0 0 8px",
+                  }}
+                >
+                  {title}
+                </p>
+                <p
+                  style={{
+                    fontSize: "12.5px",
+                    color: "#6b7280",
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
 
-          <div style={{ borderTop: "1px solid rgba(0,0,0,0.08)", padding: "36px 0", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <p style={{ fontSize: "13px", color: "#6b7280", margin: 0 }}>AuRo is launching soon — be among the first to get access.</p>
-            <a href="/waitlist" style={{ fontSize: "13.5px", fontWeight: 600, textDecoration: "none", letterSpacing: "-0.01em", backgroundColor: "#111", color: "white", padding: "10px 24px", borderRadius: "999px", display: "inline-block" }}>
-              Join the waiting list
-            </a>
+          <div
+            style={{
+              borderTop: "1px solid rgba(0,0,0,0.08)",
+              padding: "36px 0",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <p style={{ fontSize: "13px", color: "#6b7280", margin: 0 }}>
+              AuRo is launching soon — be among the first to get access.
+            </p>
+            <WaitlistForm />
           </div>
         </div>
       </div>
