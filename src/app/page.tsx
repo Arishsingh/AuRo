@@ -120,7 +120,7 @@ export default function Home() {
               whiteSpace: "nowrap",
             }}
           >
-            Try for free
+            Join
           </button>
         </nav>
 
@@ -183,7 +183,7 @@ export default function Home() {
           >
             <Image
               src="/hero.png"
-              alt="AuRo hero"
+              alt="Aria hero"
               fill
               style={{ objectFit: "cover", objectPosition: "center top" }}
               priority
@@ -347,7 +347,6 @@ export default function Home() {
             </div>
           ))}
 
-
           <div
             style={{
               borderTop: "1px solid rgba(0,0,0,0.1)",
@@ -393,7 +392,6 @@ export default function Home() {
         </div>
       </div>
 
-
       <div
         style={{
           width: "100%",
@@ -425,7 +423,7 @@ export default function Home() {
             letterSpacing: "-0.02em",
           }}
         >
-          AuRo translates the complexity of medicine into calm, clear
+          Aria translates the complexity of medicine into calm, clear
           understanding — so every patient leaves their consultation with
           confidence, not confusion.
         </p>
@@ -463,7 +461,7 @@ export default function Home() {
           {[
             {
               title: "Document Analysis",
-              body: "AuRo reads and understands any medical document — prescriptions, lab reports, discharge summaries, and imaging reports. We extract every meaningful detail so nothing is missed.",
+              body: "Aria reads and understands any medical document — prescriptions, lab reports, discharge summaries, and imaging reports. We extract every meaningful detail so nothing is missed.",
             },
             {
               title: "Plain Language",
@@ -475,7 +473,7 @@ export default function Home() {
             },
             {
               title: "Family Support",
-              body: "AuRo helps caregivers and family members understand the patient's health journey — including warning signs, follow-up steps, and what to expect during recovery.",
+              body: "Aria helps caregivers and family members understand the patient's health journey — including warning signs, follow-up steps, and what to expect during recovery.",
             },
           ].map(({ title, body }) => (
             <div key={title}>
@@ -515,10 +513,42 @@ export default function Home() {
             <div style={{ fontSize: "13px", fontWeight: 600, color: "#111" }}>
               Features
             </div>
-            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Starter</div>
-            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Basic</div>
-            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Pro</div>
-            <div style={{ fontSize: "13px", color: "#6b7280", textAlign: "center" }}>Enterprise</div>
+            <div
+              style={{
+                fontSize: "13px",
+                color: "#6b7280",
+                textAlign: "center",
+              }}
+            >
+              Starter
+            </div>
+            <div
+              style={{
+                fontSize: "13px",
+                color: "#6b7280",
+                textAlign: "center",
+              }}
+            >
+              Basic
+            </div>
+            <div
+              style={{
+                fontSize: "13px",
+                color: "#6b7280",
+                textAlign: "center",
+              }}
+            >
+              Pro
+            </div>
+            <div
+              style={{
+                fontSize: "13px",
+                color: "#6b7280",
+                textAlign: "center",
+              }}
+            >
+              Enterprise
+            </div>
           </div>
 
           {[
@@ -672,13 +702,13 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                AuRo is built for every patient — from a single consultation to
+                Aria is built for every patient — from a single consultation to
                 full enterprise healthcare integration. Choose the plan that
                 fits your needs.
               </p>
             </div>
             <p style={{ fontSize: "11px", color: "#9ca3af", margin: 0 }}>
-              AuRo · 2025
+              Aria · 2025
             </p>
           </div>
 
@@ -970,131 +1000,20 @@ export default function Home() {
 
           <FAQAccordion />
         </div>
-      </div>
 
-      <div style={{ width: "100%", borderTop: "1px solid rgba(0,0,0,0.08)" }}>
         <div
-          style={{ maxWidth: "1600px", margin: "0 auto", padding: "0 44px" }}
+          style={{
+            borderTop: "1px solid rgba(0,0,0,0.08)",
+            padding: "36px 0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              padding: "56px 0",
-            }}
-          >
-            {[
-              {
-                icon: (
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                ),
-                title: "Instant Analysis",
-                desc: "Upload any medical document and receive a clear explanation in under 3 minutes.",
-              },
-              {
-                icon: (
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="11" width="18" height="11" rx="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                ),
-                title: "100% Private",
-                desc: "Your health data is never stored or shared. AuRo processes and forgets.",
-              },
-              {
-                icon: (
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
-                ),
-                title: "Doctor-Aligned",
-                desc: "AuRo explains — never diagnoses. Always aligned with your doctor's guidance.",
-              },
-            ].map(({ icon, title, desc }, i) => (
-              <div
-                key={title}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
-                  padding: "0 48px",
-                  borderRight: i < 2 ? "1px solid rgba(0,0,0,0.08)" : "none",
-                  color: "#111",
-                }}
-              >
-                <div style={{ marginBottom: "16px", opacity: 0.7 }}>{icon}</div>
-                <p
-                  style={{
-                    fontSize: "11px",
-                    fontWeight: 700,
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "#111",
-                    margin: "0 0 8px",
-                  }}
-                >
-                  {title}
-                </p>
-                <p
-                  style={{
-                    fontSize: "12.5px",
-                    color: "#6b7280",
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                >
-                  {desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div
-            style={{
-              borderTop: "1px solid rgba(0,0,0,0.08)",
-              padding: "36px 0",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <p style={{ fontSize: "13px", color: "#6b7280", margin: 0 }}>
-              AuRo is launching soon — be among the first to get access.
-            </p>
-            <WaitlistForm />
-          </div>
+          <p style={{ fontSize: "13px", color: "#6b7280", margin: 0 }}>
+            Aria is launching soon — be among the first to get access.
+          </p>
+          <WaitlistForm />
         </div>
       </div>
 
@@ -1127,7 +1046,7 @@ export default function Home() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                AuRo
+                Aria
               </p>
               <p
                 style={{
@@ -1184,7 +1103,7 @@ export default function Home() {
               </p>
               {[
                 "FAQ",
-                "How AuRo works",
+                "How Aria works",
                 "Privacy Policy",
                 "Terms of Service",
               ].map((l) => (
@@ -1243,7 +1162,7 @@ export default function Home() {
             }}
           >
             <p style={{ fontSize: "11px", color: "#4b5563", margin: 0 }}>
-              © 2025 AuRo. All rights reserved.
+              © 2025 Aria. All rights reserved.
             </p>
             <p style={{ fontSize: "11px", color: "#4b5563", margin: 0 }}>
               Built with care for every patient.
@@ -1384,7 +1303,7 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                AuRo's AI analyzes the medical content, identifies key
+                Aria's AI analyzes the medical content, identifies key
                 conditions, medications, and what they mean for you.
               </p>
             </div>
